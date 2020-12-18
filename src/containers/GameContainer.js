@@ -5,14 +5,16 @@ import OverworldContainer from './OverworldContainer'
 import BattleContainer from './BattleContainer'
 import Start from '../components/Start'
 
+const URL = "https://afternoon-stream-29269.herokuapp.com/"
+
 export default class GameContainer extends Component {
 
     componentDidMount(){
-        fetch('http://localhost:3000/trainers/')
+        fetch(URL)
         .then(rsp => rsp.json())
         .then(trainers => {
             this.setState({
-                player: trainers[trainers.length - 1]
+                player: trainers[0]
             })
         })
         console.log('nice')

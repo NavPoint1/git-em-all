@@ -8,6 +8,8 @@ import { Divider } from 'semantic-ui-react'
 import pokeballIcon from "../assets/pokeball.png"
 import PokemonSprite from '../components/PokemonSprite'
 
+const URL = "https://afternoon-stream-29269.herokuapp.com/"
+
 function BattleContainer(props){
     const [player, setPlayer] = useState(undefined)
     const [opponent, setOpponent] = useState(undefined)
@@ -21,11 +23,11 @@ function BattleContainer(props){
 
     //this is componentDidMount
     useEffect(() => {
-        fetch('http://localhost:3000/status_effects/1')
+        fetch(URL + 'status_effects/1')
         .then(rsp => rsp.json())
         .then(se => setNoStatusEffect(se))
         
-        fetch('http://localhost:3000/trainers/')
+        fetch(URL + 'trainers/')
         .then(rsp => rsp.json())
         .then(trainers => {
             setOpponent(trainers[props.enemyTrainer])
