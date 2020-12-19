@@ -18,7 +18,6 @@ export default class GameContainer extends Component {
                 player: trainers[0]
             })
         })
-        console.log('nice')
     }
 
     state = {
