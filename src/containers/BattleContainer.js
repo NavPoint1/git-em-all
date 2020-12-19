@@ -9,6 +9,7 @@ import pokeballIcon from "../assets/pokeball.png"
 import PokemonSprite from '../components/PokemonSprite'
 
 const URL = "https://afternoon-stream-29269.herokuapp.com/"
+// const URL = "http://localhost:3000/"
 
 function BattleContainer(props){
     const [player, setPlayer] = useState(undefined)

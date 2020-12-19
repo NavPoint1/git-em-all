@@ -6,11 +6,12 @@ import BattleContainer from './BattleContainer'
 import Start from '../components/Start'
 
 const URL = "https://afternoon-stream-29269.herokuapp.com/"
+// const URL = "http://localhost:3000/"
 
 export default class GameContainer extends Component {
 
     componentDidMount(){
-        fetch(URL)
+        fetch(URL + 'trainers/')
         .then(rsp => rsp.json())
         .then(trainers => {
             this.setState({
@@ -66,6 +67,11 @@ export default class GameContainer extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" render={() => {
+                        return <Link to="/game">
+                            <Start />
+                        </Link>
+                    }}/>
+                    <Route exact path="/git-em-all" render={() => {
                         return <Link to="/game">
                             <Start />
                         </Link>
