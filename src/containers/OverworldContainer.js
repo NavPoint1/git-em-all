@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import MetaTags from 'react-meta-tags';
+
 import Boundary from '../components/Boundary'
 import PlayerSprite from '../components/PlayerSprite'
 import Obstacle from '../components/Obstacle';
@@ -614,6 +616,9 @@ export default class OverworldContainer extends Component {
     render() {
         return (
             <div id="overworld-container">
+                <MetaTags>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1"/>
+                </MetaTags>
                 <div className="playable-area"
                     onKeyDown={this.moveSprite}
                     onKeyUp={this.stopSprite}

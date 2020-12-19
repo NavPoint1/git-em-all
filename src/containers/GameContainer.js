@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import MetaTags from 'react-meta-tags';
 
 import OverworldContainer from './OverworldContainer'
 import BattleContainer from './BattleContainer'
@@ -64,6 +65,9 @@ export default class GameContainer extends Component {
     render() {
         return (
             <BrowserRouter>
+                <MetaTags>
+                    <title>Git 'Em All</title>
+                </MetaTags>
                 <Switch>
                     <Route exact path="/" render={() => {
                         return <Link to="/game">
