@@ -625,8 +625,8 @@ export default class OverworldContainer extends Component {
                     tabIndex="0"
                     onBlur={this.freeze}
                     style={{
-                        width: (MAPSIZE + BOUNDARYTHICCNESS * 2) + "px",
-                        height: MAPSIZE + "px"
+                        width: (MAPSIZE + BOUNDARYTHICCNESS * 2),
+                        height: MAPSIZE
                     }}
                 >
                     
@@ -634,27 +634,27 @@ export default class OverworldContainer extends Component {
                     <Boundary
                         orientation="horizontal" 
                         location="top" 
-                        width={MAPSIZE + "px"}
-                        height={BOUNDARYTHICCNESS + "px"}
+                        width={MAPSIZE}
+                        height={BOUNDARYTHICCNESS}
                     />
                     <Boundary 
                         orientation="vertical" 
                         location="left" 
-                        width={BOUNDARYTHICCNESS + "px"} 
-                        height={MAPSIZE + "px"} 
+                        width={BOUNDARYTHICCNESS} 
+                        height={MAPSIZE} 
                     />
                     <Boundary 
                         orientation="vertical" 
                         location="right" 
-                        width={BOUNDARYTHICCNESS + "px"} 
-                        height={MAPSIZE + "px"} 
+                        width={BOUNDARYTHICCNESS} 
+                        height={MAPSIZE} 
                     />
                     <Boundary 
                         orientation="horizontal" 
                         location="bottom" 
-                        width={MAPSIZE + "px"} 
-                        height={BOUNDARYTHICCNESS + "px"}
-                        bottom={BOUNDARYTHICCNESS + "px"}
+                        width={MAPSIZE} 
+                        height={BOUNDARYTHICCNESS}
+                        bottom={BOUNDARYTHICCNESS}
                     />
 
                     {/* Doodads */}
@@ -663,10 +663,10 @@ export default class OverworldContainer extends Component {
                             key={doodad.id}
                             id={doodad.id}
                             image={doodad.image}
-                            width={doodad.width + "px"}
-                            height={doodad.height + "px"}
-                            x={doodad.x + "px"}
-                            y={doodad.y + "px"}
+                            width={doodad.width}
+                            height={doodad.height}
+                            x={doodad.x}
+                            y={doodad.y}
                         />
                     )}
 
@@ -676,10 +676,10 @@ export default class OverworldContainer extends Component {
                             key={obstacle.id}
                             id={obstacle.id}
                             orientation={obstacle.orientation}
-                            width={obstacle.width + "px"}
-                            height={obstacle.height + "px"}
-                            x={obstacle.x + "px"}
-                            y={obstacle.y + "px"}
+                            width={obstacle.width}
+                            height={obstacle.height}
+                            x={obstacle.x}
+                            y={obstacle.y}
                         />
                     )}
 
