@@ -521,7 +521,27 @@ export default class OverworldContainer extends Component {
                     })
                 }
                 break;
+            case "ArrowUp":
+                if(!this.state.lastInputHeld || this.state.lastInput !== "w"){
+                    this.setState({
+                        w: true,
+                        lastInput: "w",
+                        lastInputHeld: true,
+                        timeOfLastDirectionChange: new Date()
+                    })
+                }
+                break;
             case "KeyS":
+                if(!this.state.lastInputHeld || this.state.lastInput !== "s"){
+                    this.setState({
+                        s: true,
+                        lastInput: "s",
+                        lastInputHeld: true,
+                        timeOfLastDirectionChange: new Date()
+                    })
+                }
+                break;
+            case "ArrowDown":
                 if(!this.state.lastInputHeld || this.state.lastInput !== "s"){
                     this.setState({
                         s: true,
@@ -541,6 +561,16 @@ export default class OverworldContainer extends Component {
                     })
                 }
                 break;
+            case "ArrowLeft":
+                if(!this.state.lastInputHeld || this.state.lastInput !== "a"){
+                    this.setState({
+                        a: true,
+                        lastInput: "a",
+                        lastInputHeld: true,
+                        timeOfLastDirectionChange: new Date()
+                    })
+                }
+                break;
             case "KeyD":
                 if(!this.state.lastInputHeld || this.state.lastInput !== "d"){
                     this.setState({
@@ -551,8 +581,18 @@ export default class OverworldContainer extends Component {
                     })
                 }
                 break;
+            case "ArrowRight":
+                if(!this.state.lastInputHeld || this.state.lastInput !== "d"){
+                    this.setState({
+                        d: true,
+                        lastInput: "d",
+                        lastInputHeld: true,
+                        timeOfLastDirectionChange: new Date()
+                    })
+                }
+                break;
             default:
-                console.log(event.code)
+                // console.log(event.code)
                 break;
         }
     }
@@ -561,6 +601,15 @@ export default class OverworldContainer extends Component {
         let held = true
         switch(event.code) {
             case "KeyW":
+                if(this.state.lastInput === "w" || !this.state.lastInputHeld) {
+                    held = false
+                }
+                this.setState({
+                    w: false,
+                    lastInputHeld: held
+                })
+                break;
+            case "ArrowUp":
                 if(this.state.lastInput === "w" || !this.state.lastInputHeld) {
                     held = false
                 }
@@ -578,6 +627,15 @@ export default class OverworldContainer extends Component {
                     lastInputHeld: held
                 })
                 break;
+            case "ArrowDown":
+                if(this.state.lastInput === "s" || !this.state.lastInputHeld) {
+                    held = false
+                }
+                this.setState({
+                    s: false,
+                    lastInputHeld: held
+                })
+                break;
             case "KeyA":
                 if(this.state.lastInput === "a" || !this.state.lastInputHeld) {
                     held = false
@@ -587,7 +645,25 @@ export default class OverworldContainer extends Component {
                     lastInputHeld: held
                 })
                 break;
+            case "ArrowLeft":
+                if(this.state.lastInput === "a" || !this.state.lastInputHeld) {
+                    held = false
+                }
+                this.setState({
+                    a: false,
+                    lastInputHeld: held
+                })
+                break;
             case "KeyD":
+                if(this.state.lastInput === "d" || !this.state.lastInputHeld) {
+                    held = false
+                }
+                this.setState({
+                    d: false,
+                    lastInputHeld: held
+                })
+                break;
+            case "ArrowRight":
                 if(this.state.lastInput === "d" || !this.state.lastInputHeld) {
                     held = false
                 }
