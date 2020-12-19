@@ -652,7 +652,7 @@ function BattleContainer(props){
                 setPlayerPokemon(playerFirstPokemon())
                 setOpponentPokemon(opponent.pokemons[0])
             }
-            return <div>loLOADING...ading...</div>
+            return <div>LOADING...</div>
         }
         // only uncomment if we're gonna add player sprites before sending out pokemon
         // otherwise, taken care of by battleState[1] render
