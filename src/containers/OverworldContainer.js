@@ -24,6 +24,8 @@ import pokeGirlUp1 from "../assets/poke-girl-1/up1.png"
 import pokeGirlUp2 from "../assets/poke-girl-1/up2.png"
 import pokeGirlUp3 from "../assets/poke-girl-1/up3.png"
 import Doodad from '../components/Doodad';
+import pokeMusic from "../assets/AzaleaTown.mp3"
+import darkCave from "../assets/DarkCave.mp3"
 
 const MAPSIZE = 900
 const TICKTIMER = 10
@@ -155,6 +157,9 @@ export default class OverworldContainer extends Component {
                 () => this.tick(),
                 TICKTIMER   
             );
+            const audioEl = document.querySelector(".overworld-music")
+            audioEl.loop = true
+            audioEl.play()
             // skip this if we are not coming from battle
             if(this.props.defeatedTrainers.length > 0) {
                 // delete line of sight collision maps of defeated trainers
@@ -167,6 +172,11 @@ export default class OverworldContainer extends Component {
                     defeatedTrainers: this.props.defeatedTrainers
                 })
             }
+        }
+        else {
+            const audioEl = document.querySelector(".victory-music")
+            audioEl.loop = true
+            audioEl.play()
         }
     }
 
@@ -789,6 +799,14 @@ export default class OverworldContainer extends Component {
                         sprite={this.state.currentSprite}
                         size={SPRITESIZE}
                     />
+
+                    <audio className="overworld-music">
+                        <source src={pokeMusic}></source>
+                    </audio>
+
+                    <audio className="victory-music">
+                        <source src={darkCave}></source>
+                    </audio>
 
                     {this.props.victorious ? <div id="victory">YOU WIN</div> : null}
                 </div>
