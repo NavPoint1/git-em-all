@@ -72,7 +72,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 20px; */
   background-image: url("./assets/pokebackground1.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -89,7 +88,6 @@
 
 #battle-contents {
   width: 865px;
-  /* height: 100%; */
   border-style: double;
   border-color: black;
   padding: 2%;
@@ -109,7 +107,6 @@
 }
 
 .hp {
-  /* font-size: 3rem; */
   margin-bottom: -30px;
 }
 
@@ -118,11 +115,9 @@
   border: 2px;
   border-color: black;
   border-style: double;
-  /* padding: 2px; */
   height: 10px;
   width: 200px;
   background-color: rgb(201, 201, 201);
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -150,8 +145,6 @@
 }
 
 .click-img {
-  /* display: inline; */
-  /* float: right; */
   height: 25px;
   margin-left: 20px;
   margin-bottom: -5px;
@@ -160,14 +153,6 @@
 .unclickable-sprite{
   filter: grayscale(100%)
 }
-
-/* #battle-text-box {
-  margin-top: -20px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 2rem;
-  color: rgb(143, 143, 143);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-} */
 
 
 /* ######## O V E R W O R L D ######## */
@@ -194,9 +179,7 @@
 
 .playable-area {
   display: inline-flex;
-  /* background-color: rgb(160, 150, 150); */
   background-image: url("./assets/grass2.png");
-  /* position: relative; */
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
@@ -206,10 +189,7 @@
   display: flex;
   width: 40px;
   height: 40px;
-  /* background-color: black; */
   color: white;
-  /* justify-content: center;
-  align-items: center; */
   align-self: center;
   order: 5;
   position: absolute;
@@ -280,14 +260,6 @@
   /* border: 2px;
   border-color: black;
   border-style: dotted; */
-}
-
-.horizontal-obstacle {
-  /* background-image: url("./assets/smoltree1.png"); */
-}
-
-.vertical-obstacle {
-  /* background-image: url("./assets/bush1.png"); */
 }
 
 /* giovanni's bushes */
