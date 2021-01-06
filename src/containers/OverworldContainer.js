@@ -179,6 +179,12 @@ export default class OverworldContainer extends Component {
             audioEl.loop = true
             audioEl.volume = 0.1
             audioEl.play()
+            this.setState({
+                top: this.props.top,
+                left: this.props.left,
+                facing: this.props.facing,
+                defeatedTrainers: this.props.defeatedTrainers
+            })
         }
     }
 
