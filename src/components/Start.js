@@ -8,6 +8,7 @@ const Start = props => {
     useEffect(() => {
         const audioEl = document.querySelector(".intro-tunes")
         audioEl.loop = true
+        audioEl.volume = 0.05
         audioEl.play()
     },[])
 

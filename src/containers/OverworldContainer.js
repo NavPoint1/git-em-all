@@ -159,6 +159,7 @@ export default class OverworldContainer extends Component {
             );
             const audioEl = document.querySelector(".overworld-music")
             audioEl.loop = true
+            audioEl.volume = 0.05
             audioEl.play()
             // skip this if we are not coming from battle
             if(this.props.defeatedTrainers.length > 0) {
@@ -176,6 +177,7 @@ export default class OverworldContainer extends Component {
         else {
             const audioEl = document.querySelector(".victory-music")
             audioEl.loop = true
+            audioEl.volume = 0.05
             audioEl.play()
         }
     }
