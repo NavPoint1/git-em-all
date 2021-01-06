@@ -7,6 +7,7 @@ import { Divider } from 'semantic-ui-react'
 
 import pokeballIcon from "../assets/pokeball.png"
 import PokemonSprite from '../components/PokemonSprite'
+import battleMusic from "../assets/ChampionBattle.mp3"
 
 const URL = "https://afternoon-stream-29269.herokuapp.com/"
 // const URL = "http://localhost:3000/"
@@ -32,6 +33,10 @@ function BattleContainer(props){
         .then(rsp => rsp.json())
         .then(trainers => {
             setOpponent(trainers[props.enemyTrainer])
+            const audioEl = document.querySelector(".battle-music")
+            audioEl.loop = true
+            audioEl.volume = 0.1
+            audioEl.play()
         })
         if(props.player != null){
             setPlayer(copyOf(props.player))
@@ -792,7 +797,12 @@ function BattleContainer(props){
     }
 
     return(  
-        renderController()
+        <>
+            <audio className="battle-music">
+                <source src={battleMusic}></source>
+            </audio>
+            {renderController()}
+        </>
     )
 }
 
